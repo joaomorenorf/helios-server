@@ -411,7 +411,7 @@ CELERY_RESULT_SERIALIZER = 'json'
 ROLLBAR_ACCESS_TOKEN = get_from_env('ROLLBAR_ACCESS_TOKEN', None)
 if ROLLBAR_ACCESS_TOKEN:
   print("setting up rollbar")
-  MIDDLEWARE_CLASSES += ('rollbar.contrib.django.middleware.RollbarNotifierMiddleware',)
+  MIDDLEWARE += ('rollbar.contrib.django.middleware.RollbarNotifierMiddleware',)
   ROLLBAR = {
     'access_token': ROLLBAR_ACCESS_TOKEN,
     'environment': 'development' if DEBUG else 'production',  
