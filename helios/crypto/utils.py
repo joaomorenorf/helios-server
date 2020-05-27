@@ -27,5 +27,5 @@ def do_hmac(k,s):
   """
   HMAC a value with a key, hex output
   """
-  mac = hmac.new(k, s, sha1)
+  mac = hmac.new(k, s, sha256)
   return mac.hexdigest()
